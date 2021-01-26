@@ -15,7 +15,7 @@
 	</tr>
 </table>
 
-<app-employee-deatils *ngIf="empDetail; else select" [employeeDetail]="empDetail"></app-employee-deatils>
+<app-employee-deatils *ngIf="empDetail" [employeeDetail]="empDetail"></app-employee-deatils>
 
 <ng-template #empDetail>
 	<h3>Please select an employee to check if the employee is eligible for a hike</h3>
