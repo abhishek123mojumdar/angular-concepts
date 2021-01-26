@@ -1,1 +1,16 @@
-<h1>ABC</h1>
+<table>
+	<thead>
+		<th>Select</th>
+		<th>Code</th>
+		<th>Name</th>
+		<th>Performance</th>
+		<th>Status</th>
+	</thead>
+	<tr *ngFor="let emp of employee">
+		<td><input type="radio" name="{{emp.id}}" (change)="checkEmployeeForHike(emp)"></td>
+		<td>{{emp.empCode}}</td>
+		<td>{{emp.empName}}</td>
+		<td>{{emp.empPerformance}}</td>
+		<td>{{getEmpStatus(emp.empPerformance)}}</td>
+	</tr>
+</table>
