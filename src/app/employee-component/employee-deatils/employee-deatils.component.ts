@@ -9,9 +9,12 @@ export class EmployeeDeatilsComponent implements OnInit {
   @Input() employeeDetail;
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.employeeDetail);
+  }
 
   checkIfEMployeeEligible(empData) {
+    console.log(empData);
     if (empData.empSal < 1550000 && empData.empPerformance == 1) {
       return true;
     } else {
