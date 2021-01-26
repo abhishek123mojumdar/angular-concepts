@@ -6,6 +6,7 @@ import { AppComponent } from "./app.component";
 import { HelloComponent } from "./hello.component";
 import { EmployeeComponentComponent } from "./employee-component/employee-component.component";
 import { EmployeeDeatilsComponent } from "./employee-component/employee-deatils/employee-deatils.component";
+import { EmployeeComponent } from './employee/employee.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
@@ -13,7 +14,8 @@ import { EmployeeDeatilsComponent } from "./employee-component/employee-deatils/
     AppComponent,
     HelloComponent,
     EmployeeComponentComponent,
-    EmployeeDeatilsComponent
+    EmployeeDeatilsComponent,
+    EmployeeComponent
   ],
   bootstrap: [AppComponent]
 })
