@@ -1,0 +1,16 @@
+<h3>Employee Details</h3>
+<hr>
+<p>
+	<span><u><b>Employee Name  </b></u>: </span>{{employeeDetail ? employeeDetail.empName : ''}}
+</p>
+<p>
+	<u><b>Employee Salary  </b></u> : {{employeeDetail ? employeeDetail.empSal : ''}}
+</p>
+<p>
+	<u><b>Employee Performance </b></u> : {{employeeDetail ? employeeDetail.empPerformance : ''}}
+</p>
+<hr>
+
+<h4> Eligible for hike ? </h4>
+<p [ngStyle]="{backgroundColor: checkIfEMployeeEligible(employeeDetail) ? 'green':'red'}">
+	{{checkIfEMployeeEligible(employeeDetail)? 'Eligible for a hike' : 'Not eligible for a hike'}}</p>
