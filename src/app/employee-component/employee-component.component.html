@@ -1,22 +1,28 @@
 <table>
-	<thead>
-		<th>Select</th>
-		<th>Code</th>
-		<th>Name</th>
-		<th>Performance</th>
-		<th>Status</th>
-	</thead>
-	<tr *ngFor="let emp of employee">
-		<td><input type="radio" name="emp.id" (change)="checkEmployeeForHike(emp)"></td>
-		<td>{{emp.empCode}}</td>
-		<td>{{emp.empName}}</td>
-		<td>{{emp.empPerformance}}</td>
-		<td>{{getEmpStatus(emp.empPerformance)}}</td>
-	</tr>
+  <thead>
+    <th>Select</th>
+    <th>Code</th>
+    <th>Name</th>
+    <th>Performance</th>
+    <th>Status</th>
+  </thead>
+  <tr *ngFor="let emp of employee">
+    <td><input type="radio" name="emp.id" (change)="checkEmployeeForHike(emp)"></td>
+    <td>{{emp.empCode}}</td>
+    <td>{{emp.empName}}</td>
+    <td>{{emp.empPerformance}}</td>
+    <td>{{getEmpStatus(emp.empPerformance)}}</td>
+  </tr>
 </table>
+
+<hr>
+
+<input type="text" (input)="getInputData($event)"/>
+<p> {{twoWayBinding}} </p>
+<hr>
 
 <app-employee-deatils *ngIf="empDetail; else select" [employeeDetail]="empDetail"></app-employee-deatils>
 
 <ng-template #select>
-	<h3>Please select an employee to check if the employee is eligible for a hike</h3>
+  <h3>Please select an employee to check if the employee is eligible for a hike</h3>
 </ng-template>
