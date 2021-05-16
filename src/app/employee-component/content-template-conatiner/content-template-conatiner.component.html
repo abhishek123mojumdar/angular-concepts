@@ -1,0 +1,14 @@
+<div style="border:1px solid">
+  <div style="margin-left:10px; padding-bottom:10px">
+
+    <ng-content select="h1"></ng-content>
+    <ng-content select="div"></ng-content>
+    <ng-content></ng-content>
+    <ng-container *ngTemplateOutlet="inject"></ng-container>
+
+    <ng-template #inject>
+      <h4>Injected into template outlet</h4>
+    </ng-template>
+
+  </div>
+</div>
