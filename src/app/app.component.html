@@ -4,9 +4,9 @@
 </div>
 
 <div *ngIf="authorized">
-  <button (click)="activate('employee')">Show employee component</button>
-  <button (click)="activate('employee')">Show employee component</button>
+  <button (click)="activate('employee')">Launch employee component</button>
+  <button (click)="activate('temp')">Launch conversion component</button>
   <hr />
   <app-employee-component *ngIf="activation.employee"></app-employee-component>
-  <app-temperature-conversion *ngIf="activation.employee"></app-temperature-conversion>
+  <app-temperature-conversion *ngIf="activation.temperature"></app-temperature-conversion>
 </div>
