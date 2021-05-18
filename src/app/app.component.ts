@@ -9,13 +9,18 @@ export class AppComponent {
   name = 'Angular ' + VERSION.major;
 
   activation = {
-    employee: false
+    employee: false,
+    temperature: false
   };
   authorized = false;
 
   activate(type) {
     if (type === 'employee') {
       this.activation.employee = true;
+      this.activation.temperature = false;
+    } else if (type === 'temp') {
+      this.activation.employee = false;
+      this.activation.temperature = true;
     }
   }
 
