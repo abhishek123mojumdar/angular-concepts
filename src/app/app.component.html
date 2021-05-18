@@ -1,1 +1,3 @@
-<app-employee-component></app-employee-component>
+<button (click)="activate('employee')">Show employee component</button>
+<hr />
+<app-employee-component *ngIf="activation.employee"></app-employee-component>
