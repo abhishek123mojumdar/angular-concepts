@@ -1,9 +1,9 @@
-<div>
-  <app-authorize-component></app-authorize-component>
+<div *ngIf="!authorized">
+  <app-authorize-component (authorizedState)="checkAuthorized($event)"></app-authorize-component>
   <hr />
 </div>
 
-<div>
+<div *ngIf="authorized">
   <button (click)="activate('employee')">Show employee component</button>
   <hr />
   <app-employee-component *ngIf="activation.employee"></app-employee-component>

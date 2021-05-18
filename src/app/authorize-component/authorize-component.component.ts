@@ -1,5 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+  Renderer2
+} from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { authorize } from '../data';
 
 @Component({
   selector: 'app-authorize-component',
@@ -7,9 +14,14 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./authorize-component.component.css']
 })
 export class AuthorizeComponentComponent implements OnInit {
+  public authorizationData;
+  public loginError = false;
+  public loginErrMsg = '';
   constructor() {}
-
-  ngOnInit() {}
+  @Output() authorizedState = new EventEmitter<{ authorized: boolean }>();
+  ngOnInit() {
+    this.authorizationData = authorize;
+  }
 
   loginForm = new FormGroup({
     userName: new FormControl('', [Validators.required]),
@@ -17,6 +29,14 @@ export class AuthorizeComponentComponent implements OnInit {
   });
 
   onSubmit() {
-    console.log(this.loginForm);
+    let formData = this.loginForm.value;
+    this.authorizationData.forEach(auth => {
+      if (formData.userName == auth.name && formData.passWord == auth.pass)
+        this.authorizedState.emit({ authorized: true });
+      else {
+        this.loginError = true;
+        this.loginErrMsg = 'Some error in email id and password . Please check';
+      }
+    });
   }
 }
