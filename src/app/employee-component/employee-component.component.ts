@@ -34,6 +34,14 @@ export class EmployeeComponentComponent implements OnInit {
     this.empDetail = emp;
   }
 
+  removeEmployee(emp) {
+    this.employee.forEach((item, index) => {
+      if (item.empCode == emp.empCode) {
+        this.employee.splice(index, 1);
+      }
+    });
+  }
+
   getInputData(e) {
     this.twoWayBinding = <HTMLInputElement>e.target.value;
   }

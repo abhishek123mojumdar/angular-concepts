@@ -1,13 +1,19 @@
 <table>
   <thead>
     <th>Select</th>
+    <th>Action</th>
     <th>Code</th>
     <th>Name</th>
     <th>Performance</th>
     <th>Status</th>
   </thead>
   <tr *ngFor="let emp of employee">
-    <td><input type="radio" name="emp.id" (change)="checkEmployeeForHike(emp)"></td>
+    <td>
+      <input type="radio" name="emp.id" (change)="checkEmployeeForHike(emp)" />
+    </td>
+    <td>
+      <button (click)="removeEmployee(emp)" class="button-round"></button>
+    </td>
     <td>{{emp.empCode}}</td>
     <td>{{emp.empName}}</td>
     <td>{{emp.empPerformance}}</td>
@@ -15,22 +21,36 @@
   </tr>
 </table>
 
-<hr>
+<hr />
 
-<input type="text" (input)="getInputData($event)"/>
-<p> {{twoWayBinding}} </p> <!-- two way binding without using [(ngModel)]-->
-<hr>
+<input type="text" (input)="getInputData($event)" />
+<p>{{twoWayBinding}}</p>
+<!-- two way binding without using [(ngModel)]-->
+<hr />
 
-<app-employee-deatils *ngIf="empDetail; else select" [employeeDetail]="empDetail"></app-employee-deatils>
+<app-employee-deatils
+  *ngIf="empDetail; else select"
+  [employeeDetail]="empDetail"
+></app-employee-deatils>
 
 <ng-template #select>
-  <h3>Please select an employee to check if the employee is eligible for a hike</h3>
+  <h3>
+    Please select an employee to check if the employee is eligible for a hike
+  </h3>
 </ng-template>
 <hr />
 
 <app-content-template-conatiner>
   <h1>Employee component</h1>
-  <div>This component is an amalgation of employee details component and content-template-container componet</div>
-  <br/>
-  <span>It covers the concepts of structural directives, ng-content , ng-template , ng-conatiner , template outlet, two way binding without [(ngModel)], parent comp to child comp communication using @Input, Attribute directive [ngStyle]</span>
+  <div>
+    This component is an amalgation of employee details component and
+    content-template-container componet
+  </div>
+  <br />
+  <span
+    >It covers the concepts of structural directives, ng-content , ng-template ,
+    ng-conatiner , template outlet, two way binding without [(ngModel)], parent
+    comp to child comp communication using @Input, Attribute directive
+    [ngStyle]</span
+  >
 </app-content-template-conatiner>

@@ -3,3 +3,12 @@ th,
 td {
   border: 1px solid black;
 }
+
+.button-round {
+  margin-left: 10px;
+  border-radius: 150px;
+  background: #ad2121;
+  padding: 9px;
+  width: 1px;
+  height: 1px;
+}
