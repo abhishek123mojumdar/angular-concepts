@@ -1,12 +1,13 @@
 <div class="card">
   <div class="container">
-    <label for="userName">UserName</label>
-    <input type="text" id="userName" name="userName" formControlName="userName" />
-
+    <label for="C">Enter:</label>
+    <input type="number" [(ngModel)]="temp"  placeholder="Enter temperature in C"/>
+    <span> Temperature in FarenHeit -- {{temp | temperature:'F'}}</span>
     <br>
     <br>
 
-    <label for="userName">UserName</label>
-    <input type="text" id="userName" name="userName" formControlName="userName" />
+    <label for="F">Enter:</label>
+    <input type="number" [(ngModel)]="temp"  placeholder="Enter temperature in F"/>
+    <span> Temperature in Celsius -- {{temp | temperature:'C'}}</span>
   </div>
 </div>
