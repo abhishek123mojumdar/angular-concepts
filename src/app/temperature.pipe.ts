@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class TemperaturePipe implements PipeTransform {
   transform(value: any, args?: any): any {
     let temperature = value;
-    if (value && isNaN(value)) {
+    if (value) {
       if (args === 'C') {
         temperature = (value - 32) / 1.8;
         return temperature.toFixed(2);
