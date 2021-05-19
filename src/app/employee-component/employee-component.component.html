@@ -1,3 +1,5 @@
+<input type="text" [(ngModel)]="searchToken"/> {{searchToken}}
+
 <table>
   <thead>
     <th>Select</th>
@@ -7,7 +9,7 @@
     <th>Performance</th>
     <th>Status</th>
   </thead>
-  <tr *ngFor="let emp of employee">
+  <tr *ngFor="let emp of employee | searchFilter:searchToken ">
     <td>
       <input type="radio" name="emp.id" (change)="checkEmployeeForHike(emp)" />
     </td>
@@ -28,10 +30,7 @@
 <!-- two way binding without using [(ngModel)]-->
 <hr />
 
-<app-employee-deatils
-  *ngIf="empDetail; else select"
-  [employeeDetail]="empDetail"
-></app-employee-deatils>
+<app-employee-deatils *ngIf="empDetail; else select" [employeeDetail]="empDetail"></app-employee-deatils>
 
 <ng-template #select>
   <h3>
@@ -51,6 +50,5 @@
     >It covers the concepts of structural directives, ng-content , ng-template ,
     ng-conatiner , template outlet, two way binding without [(ngModel)], parent
     comp to child comp communication using @Input, Attribute directive
-    [ngStyle]</span
-  >
+    [ngStyle]</span>
 </app-content-template-conatiner>

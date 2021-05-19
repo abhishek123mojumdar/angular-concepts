@@ -11,6 +11,7 @@ export class EmployeeComponentComponent implements OnInit {
   public employee;
   public empDetail;
   public twoWayBinding;
+  public searchToken;
   ngOnInit() {
     this.employee = employees;
   }

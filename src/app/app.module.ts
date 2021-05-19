@@ -10,6 +10,7 @@ import { EmployeeDeatilsComponent } from './employee-component/employee-deatils/
 import { ContentTemplateConatinerComponent } from './employee-component/content-template-conatiner/content-template-conatiner.component';
 import { AuthorizeComponentComponent } from './authorize-component/authorize-component.component';
 import { TemperatureConversionComponent } from './temperature-conversion/temperature-conversion.component';
+import { SearchFilterPipe } from './search-filter.pipe';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, ReactiveFormsModule],
@@ -21,7 +22,8 @@ import { TemperatureConversionComponent } from './temperature-conversion/tempera
     ContentTemplateConatinerComponent,
     AuthorizeComponentComponent,
     TemperatureConversionComponent,
-    TemperaturePipe
+    TemperaturePipe,
+    SearchFilterPipe
   ],
   bootstrap: [AppComponent]
 })
