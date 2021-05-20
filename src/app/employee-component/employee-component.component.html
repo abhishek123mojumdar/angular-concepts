@@ -1,5 +1,5 @@
-<input type="text" [(ngModel)]="searchToken"/> {{searchToken}}
-
+<label>Filter As per Name : </label><input type="text" [(ngModel)]="searchToken"/> {{searchToken}}
+<hr />
 <table>
   <thead>
     <th>Select</th>
@@ -24,7 +24,7 @@
 </table>
 
 <hr />
-
+<h4>Two way binding without ngModel</h4>
 <input type="text" (input)="getInputData($event)" />
 <p>{{twoWayBinding}}</p>
 <!-- two way binding without using [(ngModel)]-->
