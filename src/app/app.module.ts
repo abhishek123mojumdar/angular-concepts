@@ -11,6 +11,9 @@ import { ContentTemplateConatinerComponent } from './employee-component/content-
 import { AuthorizeComponentComponent } from './authorize-component/authorize-component.component';
 import { TemperatureConversionComponent } from './temperature-conversion/temperature-conversion.component';
 import { SearchFilterPipe } from './search-filter.pipe';
+import { CheckServicesComponent } from './check-services/check-services.component';
+import { MathematicalOperationService } from './mathematical-operation.service';
+import { ServiceInjectorHierarchyComponent } from './check-services/service-injector-hierarchy/service-injector-hierarchy.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, ReactiveFormsModule],
@@ -23,8 +26,11 @@ import { SearchFilterPipe } from './search-filter.pipe';
     AuthorizeComponentComponent,
     TemperatureConversionComponent,
     TemperaturePipe,
-    SearchFilterPipe
+    SearchFilterPipe,
+    CheckServicesComponent,
+    ServiceInjectorHierarchyComponent
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: []
 })
 export class AppModule {}
