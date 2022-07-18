@@ -1,5 +1,7 @@
 <div *ngIf="!authorized">
-  <app-authorize-component (authorizedState)="checkAuthorized($event)"></app-authorize-component>
+  <app-authorize-component
+    (authorizedState)="checkAuthorized($event)"
+  ></app-authorize-component>
   <hr />
 </div>
 
@@ -8,7 +10,9 @@
   <button (click)="activate('temp')">Launch conversion component</button>
   <hr />
   <app-employee-component *ngIf="activation.employee"></app-employee-component>
-  <app-temperature-conversion *ngIf="activation.temperature"></app-temperature-conversion>
+  <app-temperature-conversion
+    *ngIf="activation.temperature"
+  ></app-temperature-conversion>
+  <app-check-services></app-check-services>
+  <button type="button" (click)="logout()">Logout</button>
 </div>
-
-<app-check-services></app-check-services>

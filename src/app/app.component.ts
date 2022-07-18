@@ -3,13 +3,13 @@ import { Component, OnInit, VERSION } from '@angular/core';
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
   name = 'Angular ' + VERSION.major;
   activation = {
     employee: false,
-    temperature: false
+    temperature: false,
   };
   authorized = false;
   public ngOnInit() {
@@ -36,5 +36,10 @@ export class AppComponent implements OnInit {
   checkAuthorized(e) {
     this.authorized = e.authorized;
     localStorage.setItem('auth', this.authorized.toString());
+  }
+
+  public logout() {
+    localStorage.clear();
+    this.authorized = false;
   }
 }

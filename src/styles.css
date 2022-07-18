@@ -1,1 +1,26 @@
 /* Add application styles & imports to this file! */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  background-color: blue;
+  margin: 1rem;
+  color: aliceblue;
+  padding: 5px;
+  font-size: 13.5px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+label {
+  margin: 1rem;
+}
