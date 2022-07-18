@@ -1,4 +1,5 @@
-<label>Filter As per Name : </label><input type="text" [(ngModel)]="searchToken"/> {{searchToken}}
+<label>Filter As per Name : </label
+><input type="text" [(ngModel)]="searchToken" /> {{ searchToken }}
 <hr />
 <table>
   <thead>
@@ -9,28 +10,26 @@
     <th>Performance</th>
     <th>Status</th>
   </thead>
-  <tr *ngFor="let emp of employee | searchFilter:searchToken ">
+  <tr *ngFor="let emp of employee | searchFilter: searchToken">
     <td>
       <input type="radio" name="emp.id" (change)="checkEmployeeForHike(emp)" />
     </td>
     <td>
       <button (click)="removeEmployee(emp)" class="button-round"></button>
     </td>
-    <td>{{emp.empCode}}</td>
-    <td>{{emp.empName}}</td>
-    <td>{{emp.empPerformance}}</td>
-    <td>{{getEmpStatus(emp.empPerformance)}}</td>
+    <td>{{ emp.empCode }}</td>
+    <td>{{ emp.empName }}</td>
+    <td>{{ emp.empPerformance }}</td>
+    <td>{{ getEmpStatus(emp.empPerformance) }}</td>
   </tr>
 </table>
 
 <hr />
-<h4>Two way binding without ngModel</h4>
-<input type="text" (input)="getInputData($event)" />
-<p>{{twoWayBinding}}</p>
-<!-- two way binding without using [(ngModel)]-->
-<hr />
 
-<app-employee-deatils *ngIf="empDetail; else select" [employeeDetail]="empDetail"></app-employee-deatils>
+<app-employee-deatils
+  *ngIf="empDetail; else select"
+  [employeeDetail]="empDetail"
+></app-employee-deatils>
 
 <ng-template #select>
   <h3>
@@ -50,5 +49,12 @@
     >It covers the concepts of structural directives, ng-content , ng-template ,
     ng-conatiner , template outlet, two way binding without [(ngModel)], parent
     comp to child comp communication using @Input, Attribute directive
-    [ngStyle]</span>
+    [ngStyle]</span
+  >
 </app-content-template-conatiner>
+
+<h4>Two way binding without ngModel</h4>
+<input type="text" (input)="getInputData($event)" />
+<p>{{ twoWayBinding }}</p>
+<!-- two way binding without using [(ngModel)]-->
+<hr />

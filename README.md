@@ -1,5 +1,7 @@
 # angular-ivy-dja6gj
 
+Angular concepts and implementation (check Read me)
+
 [Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular-ivy-dja6gj)
 
 This a small project in Angular that covers a lot of key concepts

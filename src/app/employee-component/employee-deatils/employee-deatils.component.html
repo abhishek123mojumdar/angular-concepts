@@ -1,16 +1,29 @@
 <h3>Employee Details</h3>
-<hr>
+<hr />
 <p>
-	<span><u><b>Employee Name  </b></u>: </span>{{employeeDetail ? employeeDetail.empName : ''}}
+  <span
+    ><u><b>Employee Name </b></u>: </span
+  >{{ employeeDetail ? employeeDetail.empName : '' }}
 </p>
 <p>
-	<u><b>Employee Salary  </b></u> : {{employeeDetail ? employeeDetail.empSal : ''}}
+  <u><b>Employee Salary </b></u> :
+  {{ employeeDetail ? employeeDetail.empSal : '' }}
 </p>
 <p>
-	<u><b>Employee Performance </b></u> : {{employeeDetail ? employeeDetail.empPerformance : ''}}
+  <u><b>Employee Performance </b></u> :
+  {{ employeeDetail ? employeeDetail.empPerformance : '' }}
 </p>
-<hr>
+<hr />
 
-<h4> Eligible for hike ? </h4>
-<p [ngStyle]="{backgroundColor: checkIfEMployeeEligible(employeeDetail) ? 'green':'red'}">
-	{{checkIfEMployeeEligible(employeeDetail)? 'Eligible for a hike' : 'Not eligible for a hike'}}</p>
+<h4>Eligible for hike ?</h4>
+<p
+  [ngClass]="
+    checkIfEMployeeEligible(employeeDetail) ? 'hike-success' : 'hike-failure'
+  "
+>
+  {{
+    checkIfEMployeeEligible(employeeDetail)
+      ? 'Eligible for a hike'
+      : 'Not eligible for a hike'
+  }}
+</p>

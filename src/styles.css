@@ -16,4 +16,13 @@ button {
 
 label {
   margin: 1rem;
+  color: blue;
+}
+
+input {
+  width: 15rem;
+  padding: 10px;
+  margin: 10px;
+  border-color: rgb(0, 81, 255);
+  border-radius: 10px;
 }
