@@ -1,4 +1,4 @@
-# angular-ivy-dja6gj
+# angular-concepts
 
 Angular concepts and implementation (check Read me)
 
