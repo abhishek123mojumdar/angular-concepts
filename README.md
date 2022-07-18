@@ -22,3 +22,7 @@ This is an humble attempt to showcase some basic concepts in angular . If there 
 I hope this project helps someone in some way .
 
 Happy coding
+
+
+
+![image](https://user-images.githubusercontent.com/17353764/179520655-01499857-ed89-4964-a4fd-8cfa19246c5e.png)
